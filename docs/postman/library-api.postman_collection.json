@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "5332ab1b-2bda-456e-b85c-2a0ae71936d6",
+		"name": "library-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8030/login_check",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"foo\",\"password\":\"1234\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8030/login_check",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8030",
+					"path": [
+						"login_check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8030/api/readers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"bar\",\"password\":\"4321\",\"email\":\"testi@testi.comi\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8030/api/readers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8030",
+					"path": [
+						"api",
+						"readers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8030/api/readers",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"reader-id\": \"1\",\"newusername\":\"rod\",\"newpassword\":\"4123\",\"newemail\":\"test1@test1.com\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8030/api/readers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8030",
+					"path": [
+						"api",
+						"readers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8030/api/books",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"front-end\",\"author\":\"manuel\",\"genre\":\"programing\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8030/api/books",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8030",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8030/api/books",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"book-id\":\"2\",\"newname\": \"back-end\",\"newauthor\":\"solrac\",\"newgenre\":\"dev\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8030/api/books",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8030",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8030/api/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"author\":\"Nicole&Jez\",\"genre\":\"devops\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8030/api/books",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8030",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8030/api/leases",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MjgwMDI5NDYsImV4cCI6MTYyODAwNjU0Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicm9kIn0.IW-st2Md5z8lW2Ty6SpY_pMLr-0ODW7j_9RDFE-J8ra0BgN74eyNYjRumRXVMuuT8psX1y5MV1Mau-JIdFfkDXPdl98bNG08VkjIJVjfTtfFgdK_BZ1Ucgzkcbdy1nkcntShsbMGE3UsGe24xCRTVmQATj71y8LI9Sh3C-rJoueiIAkXhPHL90452ZdRSQ6eRbSCMqSv0xyD-XFn4MGN2cvRhDyGB1ZEDEE804RzUJevQn2rcso8jmc8MglKSMCxqAfW9jyqU139-r546zoqep62EYNe4wvK21UOG8ON_AH536o9WYtHpI37NHeL8PP2UraKDV1dagVdKhxiv2Qk2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"book-id\": \"2\",\"return-date\":\"tomorrow\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8030/api/leases",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8030",
+					"path": [
+						"api",
+						"leases"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="Library\Domain\Book\Book" table="book" repository-class="Library\Infrastructure\Doctrine\BookRepository">
+
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <field name="name" column="name" length="50" />
+
+        <field name="author" column="author" length="50" />
+
+        <field name="genre" column="genre" length="50" />
+
+        <field name="createdAt" column="created_at" type="datetime" />
+
+        <one-to-many field="leases" target-entity="Library\Domain\Reader\Lease" mapped-by="book">
+            <cascade>
+                <cascade-persist />
+                <cascade-remove />
+            </cascade>
+        </one-to-many>
+
+    </entity>
+
+</doctrine-mapping>

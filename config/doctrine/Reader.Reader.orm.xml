@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="Library\Domain\Reader\Reader" table="reader" repository-class="Library\Infrastructure\Doctrine\ReaderRepository">
+
+        <id name="id" type="integer" column="id">
+            <generator />
+        </id>
+
+        <field name="username" column="username" length="50" nullable="true" />
+        <field name="password" column="password" length="500" nullable="true" />
+        <field name="email" column="email" length="100" />
+        <field name="isActive" column="isActive" nullable="true" />
+        <field name="createdAt" column="created_at" type="datetime" />
+
+        <one-to-many field="leases" target-entity="Library\Domain\Reader\Lease" mapped-by="reader">
+            <cascade>
+                <cascade-persist />
+                <cascade-remove />
+            </cascade>
+        </one-to-many>
+
+        <unique-constraints>
+            <unique-constraint columns="username" name="username" />
+            <unique-constraint columns="email" name="email" />
+        </unique-constraints>
+
+    </entity>
+
+</doctrine-mapping>

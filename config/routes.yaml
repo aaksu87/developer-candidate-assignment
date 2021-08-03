@@ -1,0 +1,37 @@
+api_login_check:
+    path: /login_check
+
+api_reader_create:
+    path: /api/readers
+    methods: POST
+    controller: Library\Infrastructure\Controller\Reader\ReaderController::add
+
+api_reader_edit:
+    path: /api/readers
+    methods: PUT
+    controller: Library\Infrastructure\Controller\Reader\ReaderController::edit
+
+api_reader_lease:
+    path: /api/leases
+    methods: POST
+    controller: Library\Infrastructure\Controller\Reader\LeaseController::lease
+
+api_book_created:
+    path: /api/books
+    methods: POST
+    controller: Library\Infrastructure\Controller\Book\BookController::add
+
+api_book_edit:
+    path: /api/books
+    methods: PUT
+    controller: Library\Infrastructure\Controller\Book\BookController::edit
+
+api_book_remove:
+    path: /api/books
+    methods: DELETE
+    controller: Library\Infrastructure\Controller\Book\BookController::remove
+
+api_book_search:
+    path: /api/books
+    methods: GET
+    controller: Library\Infrastructure\Controller\Book\BookController::search
